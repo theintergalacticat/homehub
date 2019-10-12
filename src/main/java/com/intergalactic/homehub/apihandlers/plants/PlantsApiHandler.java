@@ -1,6 +1,6 @@
 package com.intergalactic.homehub.apihandlers.plants;
 
-import com.intergalactic.homehub.model.PlantsWateringDetails;
+import com.intergalactic.homehub.model.plants.PlantsWateringDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,6 @@ import java.util.List;
 @RestController
 public class PlantsApiHandler
 {
-
 	private PlantsWateringDetails plantsWateringDetails;
 
 	@Autowired
