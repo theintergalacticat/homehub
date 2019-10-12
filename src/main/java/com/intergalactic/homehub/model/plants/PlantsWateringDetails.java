@@ -18,23 +18,26 @@ public class PlantsWateringDetails
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private final LocalDate dateOfWatering;
+
 	private final String nameOfPlant;
+
 	private final int soilTemperature;
+
+	private final LocalDate dateOfWatering;
 
 	@JsonIgnore
 	public List<PlantsWateringDetails> getMockData()
 	{
 		List<PlantsWateringDetails> plantsWateringDetailsList = new ArrayList<>();
-		plantsWateringDetailsList.add(new PlantsWateringDetails(LocalDate.now(), "Dracena", 30));
-		plantsWateringDetailsList.add(new PlantsWateringDetails(LocalDate.now(), "Orchid, Big", 35));
-		plantsWateringDetailsList.add(new PlantsWateringDetails(LocalDate.now(), "Orchid, Small", 33));
-		plantsWateringDetailsList.add(new PlantsWateringDetails(LocalDate.now(), "Ivy, Big potter", 32));
-		plantsWateringDetailsList.add(new PlantsWateringDetails(LocalDate.now(), "Ivy, Small potter", 30));
-		plantsWateringDetailsList.add(new PlantsWateringDetails(LocalDate.now(), "Fern", 31));
-		plantsWateringDetailsList.add(new PlantsWateringDetails(LocalDate.now(), "Leafy Fern", 32));
-		plantsWateringDetailsList.add(new PlantsWateringDetails(LocalDate.now(), "Spider Lily", 30));
-		plantsWateringDetailsList.add(new PlantsWateringDetails(LocalDate.now(), "Spring Cactus", 35));
+		plantsWateringDetailsList.add(new PlantsWateringDetails("Dracena", 30, LocalDate.now()));
+		plantsWateringDetailsList.add(new PlantsWateringDetails("Orchid, Big", 35, LocalDate.now()));
+		plantsWateringDetailsList.add(new PlantsWateringDetails("Orchid, Small", 33, LocalDate.now()));
+		plantsWateringDetailsList.add(new PlantsWateringDetails("Ivy, Big potter", 32, LocalDate.now()));
+		plantsWateringDetailsList.add(new PlantsWateringDetails("Ivy, Small potter", 30, LocalDate.now()));
+		plantsWateringDetailsList.add(new PlantsWateringDetails("Fern", 31, LocalDate.now()));
+		plantsWateringDetailsList.add(new PlantsWateringDetails("Leafy Fern", 32, LocalDate.now()));
+		plantsWateringDetailsList.add(new PlantsWateringDetails("Spider Lily", 30, LocalDate.now()));
+		plantsWateringDetailsList.add(new PlantsWateringDetails("Spring Cactus", 35, LocalDate.now()));
 		return plantsWateringDetailsList;
 	}
 }
