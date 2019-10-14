@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDate;
 
 @Data
 @Entity
@@ -40,11 +39,20 @@ public class PlantRecord
 
 	private LightExposure exposure;
 
-	private LocalDate dateOfPurchase;
+	private String dateOfPurchase;
 
 	private Integer lowerMoistureThreshold;
 
 	private Integer upperMoistureThreshold;
 
-
+	public PlantRecord(String name, String type, String purpose, PlantSize plantSize, LightExposure exposure, String dateOfPurchase, Integer lowerMoistureThreshold, Integer upperMoistureThreshold){
+		this.name = name;
+		this.type = type;
+		this.purpose = purpose;
+		this.size = plantSize;
+		this.exposure = exposure;
+		this.dateOfPurchase = dateOfPurchase;
+		this.lowerMoistureThreshold = lowerMoistureThreshold;
+		this.upperMoistureThreshold = upperMoistureThreshold;
+	}
 }
