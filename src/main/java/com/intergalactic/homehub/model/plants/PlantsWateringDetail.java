@@ -26,7 +26,7 @@ public class PlantsWateringDetails
 	private final LocalDate dateOfWatering;
 
 	@JsonIgnore
-	public List<PlantsWateringDetails> getMockData()
+	public static List<PlantsWateringDetails> getMockData()
 	{
 		List<PlantsWateringDetails> plantsWateringDetailsList = new ArrayList<>();
 		plantsWateringDetailsList.add(new PlantsWateringDetails("Dracena", 30, LocalDate.now()));
