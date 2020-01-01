@@ -17,11 +17,15 @@ public class PlantRecordService
 	private PlantRecordRepository plantRecordRepository;
 
 	public void createRecord(PlantRecord plantRecord){
-		this.plantRecordRepository.save(plantRecord);
+		this.savePlant(plantRecord);
 	}
 
-	public void updatePlant(){
+	public void updatePlant(PlantRecord plantRecord){
+		this.savePlant(plantRecord);
+	}
 
+	private void savePlant(PlantRecord plantRecord){
+		this.plantRecordRepository.save(plantRecord);
 	}
 
 	public void deletePlant(Long id){
@@ -31,7 +35,6 @@ public class PlantRecordService
 	public List<PlantRecord> getAllPlantsList(){
 		return StreamSupport.stream(this.plantRecordRepository.findAll().spliterator(), false).collect(Collectors.toList());
 	}
-
 
 	public PlantRecord getPlantWithId(@PathVariable Long id){
 		return this.plantRecordRepository.findById(id).get();

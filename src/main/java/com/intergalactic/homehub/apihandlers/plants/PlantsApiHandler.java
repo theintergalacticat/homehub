@@ -23,23 +23,7 @@ public class PlantsApiHandler
 	@Autowired
 	private PlantRecordService plantRecordService;
 
-	@PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public String addPlant(@RequestBody PlantRecord plantRecord){
-		this.plantRecordService.createRecord(plantRecord);
-		return "Added new plant";
-	}
-
-	@PostMapping(path = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void updatePlant(){
-
-	}
-
-	@DeleteMapping(path = "/delete/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void deletePlant(@PathVariable Long id){
-		this.plantRecordService.deletePlant(id);
-	}
-
-	@GetMapping(path = "/getAll")
+	@GetMapping(path = "/getall")
 	public List<PlantRecord> getAllPlantsList(){
 		return this.plantRecordService.getAllPlantsList();
 	}
@@ -47,5 +31,21 @@ public class PlantsApiHandler
 	@GetMapping(path = "/get/{id}")
 	public PlantRecord getPlantWithId(@PathVariable Long id){
 		return this.plantRecordService.getPlantWithId(id);
+	}
+
+	@PostMapping(path = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public String addPlant(@RequestBody PlantRecord plantRecord){
+		this.plantRecordService.createRecord(plantRecord);
+		return "Added new plant";
+	}
+
+	@PostMapping(path = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void updatePlant(@RequestBody PlantRecord plantRecord){
+		this.plantRecordService.updatePlant(plantRecord);
+	}
+
+	@DeleteMapping(path = "/delete/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void deletePlant(@PathVariable Long id){
+		this.plantRecordService.deletePlant(id);
 	}
 }

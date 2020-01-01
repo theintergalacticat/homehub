@@ -19,4 +19,6 @@ public class WaterLog
 	private Long plantId;
 
 	private LocalDateTime dateTimeOfWatering;
+
+	private Long currentMoistureReadingId;
 }

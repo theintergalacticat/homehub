@@ -1,6 +1,9 @@
 package com.intergalactic.homehub.model.plants;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +12,9 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class PlantRecord
 {
 	enum PlantSize {
@@ -44,15 +50,4 @@ public class PlantRecord
 	private Integer lowerMoistureThreshold;
 
 	private Integer upperMoistureThreshold;
-
-	public PlantRecord(String name, String type, String purpose, PlantSize plantSize, LightExposure exposure, String dateOfPurchase, Integer lowerMoistureThreshold, Integer upperMoistureThreshold){
-		this.name = name;
-		this.type = type;
-		this.purpose = purpose;
-		this.size = plantSize;
-		this.exposure = exposure;
-		this.dateOfPurchase = dateOfPurchase;
-		this.lowerMoistureThreshold = lowerMoistureThreshold;
-		this.upperMoistureThreshold = upperMoistureThreshold;
-	}
 }
